@@ -54,13 +54,37 @@ class App extends Component {
                root.setAttribute('style', 'background: linear-gradient(0deg, rgb(249, 245, 148) 50%, #fff 50%)');
                var sun = document.getElementById('sun');
                sun.setAttribute('style', 'opacity: 1');
+               var cloud1 = document.getElementById('cloud1');
+               cloud1.setAttribute('style', 'opacity: 0');
+               var cloud2 = document.getElementById('cloud2');
+               cloud2.setAttribute('style', 'opacity: 0');
           } else if ( this.state.description === "Partly cloudy" ) {
                var root = document.getElementById('root');
-               root.setAttribute('style', 'background: linear-gradient(0deg, rgba(249, 245, 148) 50%, #fff 50%)');
+               root.setAttribute('style', 'background: linear-gradient(0deg, rgb(249, 245, 148) 50%, #fff 50%)');
                var sun = document.getElementById('sun');
                sun.setAttribute('style', 'opacity: 1');
                var cloud1 = document.getElementById('cloud1');
                cloud1.setAttribute('style', 'opacity: 1');
+               var cloud2 = document.getElementById('cloud2');
+               cloud2.setAttribute('style', 'opacity: 0');
+          } else if ( this.state.description === "Cloudy" || this.state.description === "Overcast" ) {
+               var root = document.getElementById('root');
+               root.setAttribute('style', 'background: linear-gradient(0deg, #ebebeb 50%, #fff 50%)');
+               var sun = document.getElementById('sun');
+               sun.setAttribute('style', 'opacity: 0');
+               var cloud1 = document.getElementById('cloud1');
+               cloud1.setAttribute('style', 'opacity: 1');
+               var cloud2 = document.getElementById('cloud2');
+               cloud2.setAttribute('style', 'opacity: 1');
+          } else if ( this.state.description === "Cloudy" || this.state.description === "Overcast" ) {
+               var root = document.getElementById('root');
+               root.setAttribute('style', 'background: linear-gradient(0deg, #ebebeb 50%, #fff 50%)');
+               var sun = document.getElementById('sun');
+               sun.setAttribute('style', 'opacity: 0');
+               var cloud1 = document.getElementById('cloud1');
+               cloud1.setAttribute('style', 'opacity: 1');
+               var cloud2 = document.getElementById('cloud2');
+               cloud2.setAttribute('style', 'opacity: 1');
           }
      }
 
@@ -145,6 +169,32 @@ class App extends Component {
                     <div id="cloud1">
                          <div id="cloud111"></div>
                          <div id="cloud222"></div>
+                    </div>
+                    <div id="cloud2">
+                         <div id="cloud333"></div>
+                         <div id="cloud444"></div>
+                    </div>
+                    <div class="rain">
+                         <span id="raindrop1"></span>
+                         <span id="raindrop2"></span>
+                         <span id="raindrop3"></span>
+                         <span id="raindrop4"></span>
+                         <span id="raindrop5"></span>
+                         <span id="raindrop6"></span>
+                         <span id="raindrop7"></span>
+                         <span id="raindrop8"></span>
+                         <span id="raindrop9"></span>
+                         <span id="raindrop10"></span>
+                         <span id="raindrop11"></span>
+                         <span id="raindrop12"></span>
+                         <span id="raindrop13"></span>
+                         <span id="raindrop14"></span>
+                         <span id="raindrop15"></span>
+                         <span id="raindrop16"></span>
+                         <span id="raindrop17"></span>
+                         <span id="raindrop18"></span>
+                         <span id="raindrop19"></span>
+                         <span id="raindrop20"></span>
                     </div>
                     <SideNav />
                </div>
