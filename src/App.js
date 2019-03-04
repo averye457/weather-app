@@ -24,8 +24,6 @@ class App extends Component {
 
           var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=Paris&days=1`;
 
-          console.log(url);
-
           fetch( url )
                .then(response => response.json())
                .then( response => this.setState({
@@ -41,8 +39,29 @@ class App extends Component {
                     humidity: response.current.humidity,
                     cloudCover: response.current.cloud,
                     feelsLike: response.current.feelslike_f
-               }));
+               }))
 
+     }
+
+     componentDidUpdate () {
+          this.checkWeatherText();
+}
+
+     checkWeatherText() {
+
+          if ( this.state.description === "Sunny" || this.state.description === "Clear" ) {
+               var root = document.getElementById('root');
+               root.setAttribute('style', 'background: linear-gradient(0deg, rgb(249, 245, 148) 50%, #fff 50%)');
+               var sun = document.getElementById('sun');
+               sun.setAttribute('style', 'opacity: 1');
+          } else if ( this.state.description === "Partly cloudy" ) {
+               var root = document.getElementById('root');
+               root.setAttribute('style', 'background: linear-gradient(0deg, rgba(249, 245, 148) 50%, #fff 50%)');
+               var sun = document.getElementById('sun');
+               sun.setAttribute('style', 'opacity: 1');
+               var cloud1 = document.getElementById('cloud1');
+               cloud1.setAttribute('style', 'opacity: 1');
+          }
      }
 
      checkCountry = ( country ) => {
@@ -74,8 +93,6 @@ class App extends Component {
 
           var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=${this.state.searchedLocation}&days=1`;
 
-          console.log(url);
-
           fetch( url )
                .then(response => response.json())
                .then( response => this.setState({
@@ -91,6 +108,8 @@ class App extends Component {
                     humidity: response.current.humidity,
                     cloudCover: response.current.cloud,
                     feelsLike: response.current.feelslike_f
+               }, () => {
+                    this.checkWeatherText()
                }))
 
      }
@@ -120,7 +139,12 @@ class App extends Component {
                          <h4>{this.state.description}</h4>
                          <p>Winds { this.state.windDirection } at { Math.round(this.state.windSpeed) } mph.
                               Humidity of { this.state.humidity }% with cloud cover of { this.state.cloudCover }%.
-                              Currently feels like { Math.round( this.state.feelsLike ) }&#176;</p>
+                              Currently feels like { Math.round( this.state.feelsLike ) }&#176;.</p>
+                    </div>
+                    <div id="sun"></div>
+                    <div id="cloud1">
+                         <div id="cloud111"></div>
+                         <div id="cloud222"></div>
                     </div>
                     <SideNav />
                </div>

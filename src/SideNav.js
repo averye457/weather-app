@@ -11,7 +11,9 @@ class SideNav extends Component {
 
      render () {
           return (
-               <div></div>
+               <div className="nav">
+                    
+               </div>
           );
      }
 
