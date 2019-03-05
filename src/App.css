@@ -144,7 +144,7 @@ h6, h5, h3, h4, p {
      top: -100px;
      left: 700px;
      animation-name: sunny;
-     animation-duration: 4s;
+     animation-duration: 3s;
      animation-iteration-count: infinite;
      animation-timing-function: ease-out;
      opacity: 0;
@@ -207,37 +207,80 @@ h6, h5, h3, h4, p {
      transform: scale(1.2);
 }
 
-.rain {
-
+#rain {
+     opacity: 0;
 }
 
 span {
-     width: 4px;
-     height: 4px;
-     border-radius: 2px;
-     background-color: blue;
+     width: 8px;
+     height: 8px;
+     border-radius: 4px;
+     background-color: lightblue;
+     position: absolute;
+     top: 160px;
+     left: 610px;
+     z-index: -2;
 }
 
-#raindrop1 {width: 4px; height: 4px;}
-#raindrop2 {}
-#raindrop3 {}
-#raindrop4 {}
-#raindrop5 {}
-#raindrop6 {}
-#raindrop7 {}
-#raindrop8 {}
-#raindrop9 {}
-#raindrop10 {}
-#raindrop11 {}
-#raindrop12 {}
-#raindrop13 {}
-#raindrop14 {}
-#raindrop15 {}
-#raindrop16 {}
-#raindrop17 {}
-#raindrop18 {}
-#raindrop19 {}
-#raindrop20 {}
+#raindrop5, #raindrop6, #raindrop7, #raindrop8 {
+     left: 640px;
+     top: 110px;
+}
+
+#raindrop9, #raindrop10, #raindrop11, #raindrop12 {
+     left: 680px;
+     top: 150px;
+}
+
+#raindrop13, #raindrop14, #raindrop15, #raindrop16 {
+     left: 730px;
+     top: 100px;
+}
+
+#raindrop17, #raindrop18, #raindrop19, #raindrop20 {
+     left: 770px;
+     top: 170px;
+}
+
+#raindrop21, #raindrop22, #raindrop23, #raindrop24 {
+     left: 815px;
+     top: 110px;
+}
+
+#raindrop25, #raindrop26, #raindrop27, #raindrop28 {
+     left: 860px;
+     top: 140px;
+}
+
+#raindrop1, #raindrop5, #raindrop9, #raindrop13, #raindrop17, #raindrop21, #raindrop25 {
+     animation-name: rain;
+     animation-duration: 1.2s;
+     animation-delay: 0s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+#raindrop2, #raindrop6, #raindrop10, #raindrop14, #raindrop18, #raindrop22, #raindrop26 {
+     animation-name: rain;
+     animation-duration: 1.2s;
+     animation-delay: .3s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+#raindrop3, #raindrop7, #raindrop11, #raindrop15, #raindrop19, #raindrop23, #raindrop27  {
+     animation-name: rain;
+     animation-duration: 1.2s;
+     animation-delay: .6s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+#raindrop4, #raindrop8, #raindrop12, #raindrop16, #raindrop20, #raindrop24, #raindrop28 {
+     animation-name: rain;
+     animation-duration: 1.2s;
+     animation-delay: .9s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+
 
 @keyframes sunny {
      0% {
@@ -245,5 +288,14 @@ span {
      }
      100% {
           box-shadow: 0px 0px 0px 100px rgba(249, 245, 148, 0);
+     }
+}
+
+@keyframes rain {
+     0% {
+          transform: translateY(0px);
+     }
+     100% {
+          transform: translateY(525px);
      }
 }

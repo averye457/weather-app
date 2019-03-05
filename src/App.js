@@ -58,6 +58,10 @@ class App extends Component {
                cloud1.setAttribute('style', 'opacity: 0');
                var cloud2 = document.getElementById('cloud2');
                cloud2.setAttribute('style', 'opacity: 0');
+               var cloud2 = document.getElementById('cloud2');
+               cloud2.setAttribute('style', 'opacity: 0');
+               var rain = document.getElementById('rain');
+               rain.setAttribute('style', 'display: none');
           } else if ( this.state.description === "Partly cloudy" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, rgb(249, 245, 148) 50%, #fff 50%)');
@@ -67,6 +71,8 @@ class App extends Component {
                cloud1.setAttribute('style', 'opacity: 1');
                var cloud2 = document.getElementById('cloud2');
                cloud2.setAttribute('style', 'opacity: 0');
+               var rain = document.getElementById('rain');
+               rain.setAttribute('style', 'display: none');
           } else if ( this.state.description === "Cloudy" || this.state.description === "Overcast" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, #ebebeb 50%, #fff 50%)');
@@ -76,6 +82,8 @@ class App extends Component {
                cloud1.setAttribute('style', 'opacity: 1');
                var cloud2 = document.getElementById('cloud2');
                cloud2.setAttribute('style', 'opacity: 1');
+               var rain = document.getElementById('rain');
+               rain.setAttribute('style', 'display: none');
           } else if ( this.state.description === "Cloudy" || this.state.description === "Overcast" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, #ebebeb 50%, #fff 50%)');
@@ -85,6 +93,25 @@ class App extends Component {
                cloud1.setAttribute('style', 'opacity: 1');
                var cloud2 = document.getElementById('cloud2');
                cloud2.setAttribute('style', 'opacity: 1');
+               var rain = document.getElementById('rain');
+               rain.setAttribute('style', 'display: none');
+          } else if ( this.state.description === "Patchy rain possible" || this.state.description === "Patchy light drizzle"
+          || this.state.description === "Light drizzle" || this.state.description === "Patchy light rain"
+          || this.state.description === "Light rain" || this.state.description === "Patchy light drizzle"
+          || this.state.description === "Moderate rain at times" || this.state.description === "Moderate rain"
+          || this.state.description === "Heavy rain at times" || this.state.description === "Heavy rain"
+          || this.state.description === "Torrential rain shower" || this.state.description === "Patchy light rain with thunder"
+          || this.state.description === "Moderate or heavy rain with thunder" ) {
+               var root = document.getElementById('root');
+               root.setAttribute('style', 'background: linear-gradient(0deg, lightblue 50%, #fff 50%)');
+               var sun = document.getElementById('sun');
+               sun.setAttribute('style', 'opacity: 0');
+               var cloud1 = document.getElementById('cloud1');
+               cloud1.setAttribute('style', 'opacity: 1');
+               var cloud2 = document.getElementById('cloud2');
+               cloud2.setAttribute('style', 'opacity: 1');
+               var rain = document.getElementById('rain');
+               rain.setAttribute('style', 'opacity: 1');
           }
      }
 
@@ -174,7 +201,7 @@ class App extends Component {
                          <div id="cloud333"></div>
                          <div id="cloud444"></div>
                     </div>
-                    <div class="rain">
+                    <div id="rain">
                          <span id="raindrop1"></span>
                          <span id="raindrop2"></span>
                          <span id="raindrop3"></span>
@@ -195,6 +222,14 @@ class App extends Component {
                          <span id="raindrop18"></span>
                          <span id="raindrop19"></span>
                          <span id="raindrop20"></span>
+                         <span id="raindrop21"></span>
+                         <span id="raindrop22"></span>
+                         <span id="raindrop23"></span>
+                         <span id="raindrop24"></span>
+                         <span id="raindrop25"></span>
+                         <span id="raindrop26"></span>
+                         <span id="raindrop27"></span>
+                         <span id="raindrop28"></span>
                     </div>
                     <SideNav />
                </div>
