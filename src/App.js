@@ -62,6 +62,8 @@ class App extends Component {
                cloud2.setAttribute('style', 'opacity: 0');
                var rain = document.getElementById('rain');
                rain.setAttribute('style', 'display: none');
+               var snow = document.getElementById('snow');
+               snow.setAttribute('style', 'display: none');
           } else if ( this.state.description === "Partly cloudy" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, rgb(249, 245, 148) 50%, #fff 50%)');
@@ -73,6 +75,8 @@ class App extends Component {
                cloud2.setAttribute('style', 'opacity: 0');
                var rain = document.getElementById('rain');
                rain.setAttribute('style', 'display: none');
+               var snow = document.getElementById('snow');
+               snow.setAttribute('style', 'display: none');
           } else if ( this.state.description === "Cloudy" || this.state.description === "Overcast" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, #ebebeb 50%, #fff 50%)');
@@ -84,17 +88,8 @@ class App extends Component {
                cloud2.setAttribute('style', 'opacity: 1');
                var rain = document.getElementById('rain');
                rain.setAttribute('style', 'display: none');
-          } else if ( this.state.description === "Cloudy" || this.state.description === "Overcast" ) {
-               var root = document.getElementById('root');
-               root.setAttribute('style', 'background: linear-gradient(0deg, #ebebeb 50%, #fff 50%)');
-               var sun = document.getElementById('sun');
-               sun.setAttribute('style', 'opacity: 0');
-               var cloud1 = document.getElementById('cloud1');
-               cloud1.setAttribute('style', 'opacity: 1');
-               var cloud2 = document.getElementById('cloud2');
-               cloud2.setAttribute('style', 'opacity: 1');
-               var rain = document.getElementById('rain');
-               rain.setAttribute('style', 'display: none');
+               var snow = document.getElementById('snow');
+               snow.setAttribute('style', 'display: none');
           } else if ( this.state.description === "Patchy rain possible" || this.state.description === "Patchy light drizzle"
           || this.state.description === "Light drizzle" || this.state.description === "Patchy light rain"
           || this.state.description === "Light rain" || this.state.description === "Patchy light drizzle"
@@ -110,8 +105,31 @@ class App extends Component {
                cloud1.setAttribute('style', 'opacity: 1');
                var cloud2 = document.getElementById('cloud2');
                cloud2.setAttribute('style', 'opacity: 1');
+               var snow = document.getElementById('snow');
+               snow.setAttribute('style', 'display: none');
+               document.documentElement.style.setProperty('--precipitation', 'lightblue');
                var rain = document.getElementById('rain');
                rain.setAttribute('style', 'opacity: 1');
+          } else if ( this.state.description === "Patchy snow possible" || this.state.description === "Blowing snow"
+          || this.state.description === "Blizzard" || this.state.description === "Patchy light snow"
+          || this.state.description === "Light snow" || this.state.description === "Patchy moderate snow"
+          || this.state.description === "Moderate snow" || this.state.description === "Patchy heavy snow"
+          || this.state.description === "Heavy snow" || this.state.description === "Light snow showers"
+          || this.state.description === "Moderate or heavy snow showers" || this.state.description === "atchy light snow with thunder"
+          || this.state.description === "Moderate or heavy snow with thunder" ) {
+               var root = document.getElementById('root');
+               root.setAttribute('style', 'background: linear-gradient(0deg, 	#E8E8E8 50%, #fff 50%)');
+               var sun = document.getElementById('sun');
+               sun.setAttribute('style', 'opacity: 0');
+               var cloud1 = document.getElementById('cloud1');
+               cloud1.setAttribute('style', 'opacity: 1');
+               var cloud2 = document.getElementById('cloud2');
+               cloud2.setAttribute('style', 'opacity: 1');
+               var rain = document.getElementById('rain');
+               rain.setAttribute('style', 'display: none');
+               var snow = document.getElementById('snow');
+               snow.setAttribute('style', 'opacity: 1');
+               document.documentElement.style.setProperty('--precipitation', '	#DCDCDC');
           }
      }
 
@@ -202,34 +220,64 @@ class App extends Component {
                          <div id="cloud444"></div>
                     </div>
                     <div id="rain">
-                         <span id="raindrop1"></span>
-                         <span id="raindrop2"></span>
-                         <span id="raindrop3"></span>
-                         <span id="raindrop4"></span>
-                         <span id="raindrop5"></span>
-                         <span id="raindrop6"></span>
-                         <span id="raindrop7"></span>
-                         <span id="raindrop8"></span>
-                         <span id="raindrop9"></span>
-                         <span id="raindrop10"></span>
-                         <span id="raindrop11"></span>
-                         <span id="raindrop12"></span>
-                         <span id="raindrop13"></span>
-                         <span id="raindrop14"></span>
-                         <span id="raindrop15"></span>
-                         <span id="raindrop16"></span>
-                         <span id="raindrop17"></span>
-                         <span id="raindrop18"></span>
-                         <span id="raindrop19"></span>
-                         <span id="raindrop20"></span>
-                         <span id="raindrop21"></span>
-                         <span id="raindrop22"></span>
-                         <span id="raindrop23"></span>
-                         <span id="raindrop24"></span>
-                         <span id="raindrop25"></span>
-                         <span id="raindrop26"></span>
-                         <span id="raindrop27"></span>
-                         <span id="raindrop28"></span>
+                         <span class ="raindrop" id="raindrop1"></span>
+                         <span class ="raindrop" id="raindrop2"></span>
+                         <span class ="raindrop" id="raindrop3"></span>
+                         <span class ="raindrop" id="raindrop4"></span>
+                         <span class ="raindrop" id="raindrop5"></span>
+                         <span class ="raindrop" id="raindrop6"></span>
+                         <span class ="raindrop" id="raindrop7"></span>
+                         <span class ="raindrop" id="raindrop8"></span>
+                         <span class ="raindrop" id="raindrop9"></span>
+                         <span class ="raindrop" id="raindrop10"></span>
+                         <span class ="raindrop" id="raindrop11"></span>
+                         <span class ="raindrop" id="raindrop12"></span>
+                         <span class ="raindrop" id="raindrop13"></span>
+                         <span class ="raindrop" id="raindrop14"></span>
+                         <span class ="raindrop" id="raindrop15"></span>
+                         <span class ="raindrop" id="raindrop16"></span>
+                         <span class ="raindrop" id="raindrop17"></span>
+                         <span class ="raindrop" id="raindrop18"></span>
+                         <span class ="raindrop" id="raindrop19"></span>
+                         <span class ="raindrop" id="raindrop20"></span>
+                         <span class ="raindrop" id="raindrop21"></span>
+                         <span class ="raindrop" id="raindrop22"></span>
+                         <span class ="raindrop" id="raindrop23"></span>
+                         <span class ="raindrop" id="raindrop24"></span>
+                         <span class ="raindrop" id="raindrop25"></span>
+                         <span class ="raindrop" id="raindrop26"></span>
+                         <span class ="raindrop" id="raindrop27"></span>
+                         <span class ="raindrop" id="raindrop28"></span>
+                    </div>
+                    <div id="snow">
+                         <span id="snowfall1"></span>
+                         <span id="snowfall2"></span>
+                         <span id="snowfall3"></span>
+                         <span id="snowfall4"></span>
+                         <span id="snowfall5"></span>
+                         <span id="snowfall6"></span>
+                         <span id="snowfall7"></span>
+                         <span id="snowfall8"></span>
+                         <span id="snowfall9"></span>
+                         <span id="snowfall10"></span>
+                         <span id="snowfall11"></span>
+                         <span id="snowfall12"></span>
+                         <span id="snowfall13"></span>
+                         <span id="snowfall14"></span>
+                         <span id="snowfall15"></span>
+                         <span id="snowfall16"></span>
+                         <span id="snowfall17"></span>
+                         <span id="snowfall18"></span>
+                         <span id="snowfall19"></span>
+                         <span id="snowfall20"></span>
+                         <span id="snowfall21"></span>
+                         <span id="snowfall22"></span>
+                         <span id="snowfall23"></span>
+                         <span id="snowfall24"></span>
+                         <span id="snowfall25"></span>
+                         <span id="snowfall26"></span>
+                         <span id="snowfall27"></span>
+                         <span id="snowfall28"></span>
                     </div>
                     <SideNav />
                </div>

@@ -1,3 +1,10 @@
+:root {
+     --precipitation: lightblue;
+}
+
+
+
+
 #root {
      width: 100vw;
      height: 100vh;
@@ -63,7 +70,7 @@
 }
 
 .weather-info {
-     max-width: 650px;
+     max-width: 570px;
 }
 
 .search-stuff {
@@ -207,15 +214,11 @@ h6, h5, h3, h4, p {
      transform: scale(1.2);
 }
 
-#rain {
-     opacity: 0;
-}
-
 span {
      width: 8px;
      height: 8px;
      border-radius: 4px;
-     background-color: lightblue;
+     background-color: var(--precipitation);
      position: absolute;
      top: 160px;
      left: 610px;
@@ -282,6 +285,72 @@ span {
 }
 
 
+
+
+#snowfall5, #snowfall6, #snowfall7, #snowfall8 {
+     left: 640px;
+     top: 110px;
+}
+
+#snowfall9, #snowfall10, #snowfall11, #snowfall12 {
+     left: 680px;
+     top: 150px;
+}
+
+#snowfall13, #snowfall14, #snowfall15, #snowfall16 {
+     left: 730px;
+     top: 100px;
+}
+
+#snowfall17, #snowfall18, #snowfall19, #snowfall20 {
+     left: 770px;
+     top: 170px;
+}
+
+#snowfall21, #snowfall22, #snowfall23, #snowfall24 {
+     left: 815px;
+     top: 110px;
+}
+
+#snowfall25, #snowfall26, #snowfall27, #snowfall28 {
+     left: 860px;
+     top: 140px;
+}
+
+#snowfall1, #snowfall5, #snowfall9, #snowfall13, #snowfall17, #snowfall21, #snowfall25 {
+     animation-name: snowfall;
+     animation-duration: 2.4s;
+     animation-delay: 0s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+#snowfall2, #snowfall6, #snowfall10, #snowfall14, #snowfall18, #snowfall22, #snowfall26 {
+     animation-name: snowfall;
+     animation-duration: 2.4s;
+     animation-delay: .6s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+#snowfall3, #snowfall7, #snowfall11, #snowfall15, #snowfall19, #snowfall23, #snowfall27  {
+     animation-name: snowfall;
+     animation-duration: 2.4s;
+     animation-delay: 1.2s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+#snowfall4, #snowfall8, #snowfall12, #snowfall16, #snowfall20, #snowfall24, #snowfall28 {
+     animation-name: snowfall;
+     animation-duration: 2.4s;
+     animation-delay: 1.8s;
+     animation-iteration-count: infinite;
+     animation-timing-function: ease-in;
+}
+
+
+
+
+
+
 @keyframes sunny {
      0% {
           box-shadow: 0px 0px 0px 0px rgba(249, 245, 148,  .5);
@@ -296,6 +365,15 @@ span {
           transform: translateY(0px);
      }
      100% {
-          transform: translateY(525px);
+          transform: translateY(550px);
+     }
+}
+
+@keyframes snowfall {
+     0% {
+          transform: translateY(0px);
+     }
+     100% {
+          transform: translateY(550px);
      }
 }
