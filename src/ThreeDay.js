@@ -1,8 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import './ThreeDay.css';
+import { Link } from 'react-router-dom'
+
+// components!
 import SideNav from './SideNav';
 
-class Today extends Component {
+
+class ThreeDay extends Component {
 
      state = {
           searchedLocation: null,
@@ -18,12 +23,21 @@ class Today extends Component {
           humidity: null,
           cloudCover: null,
           feelsLike: null,
-          forecast: null
+          FirstDayHigh: null,
+          FirstDayLow: null,
+          SecondDayHigh: null,
+          SecondDayLow: null,
+          ThirdDayHigh: null,
+          ThirdDayLow: null,
+          FirstDay: null,
+          FirstDescription: null,
+          SecondDescription: null,
+          ThirdDescription: null
      }
 
      componentDidMount(){
 
-          var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=Paris&days=10`;
+          var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=Paris&days=7`;
 
           fetch( url )
                .then(response => response.json())
@@ -40,7 +54,16 @@ class Today extends Component {
                     humidity: response.current.humidity,
                     cloudCover: response.current.cloud,
                     feelsLike: response.current.feelslike_f,
-                    forecast: response.forecast.forecastday
+                    FirstDayHigh: response.forecast.forecastday[1].day.maxtemp_f,
+                    FirstDayLow: response.forecast.forecastday[1].day.mintemp_f,
+                    SecondDayHigh: response.forecast.forecastday[2].day.maxtemp_f,
+                    SecondDayLow: response.forecast.forecastday[2].day.mintemp_f,
+                    ThirdDayHigh: response.forecast.forecastday[3].day.maxtemp_f,
+                    ThirdDayLow: response.forecast.forecastday[3].day.mintemp_f,
+                    FirstDay: response.forecast.forecastday[3].date,
+                    FirstDescription: response.forecast.forecastday[1].day.condition.text,
+                    SecondDescription: response.forecast.forecastday[2].day.condition.text,
+                    ThirdDescription: response.forecast.forecastday[3].day.condition.text
                }))
 
      }
@@ -50,6 +73,8 @@ class Today extends Component {
 }
 
      checkWeatherText() {
+
+          console.log( this.state.description );
 
           if ( this.state.description === "Sunny" || this.state.description === "Clear" ) {
                var root = document.getElementById('root');
@@ -117,7 +142,7 @@ class Today extends Component {
           || this.state.description === "Light snow" || this.state.description === "Patchy moderate snow"
           || this.state.description === "Moderate snow" || this.state.description === "Patchy heavy snow"
           || this.state.description === "Heavy snow" || this.state.description === "Light snow showers"
-          || this.state.description === "Moderate or heavy snow showers" || this.state.description === "atchy light snow with thunder"
+          || this.state.description === "Moderate or heavy snow showers" || this.state.description === "Patchy light snow with thunder"
           || this.state.description === "Moderate or heavy snow with thunder" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, 	#E8E8E8 50%, #fff 50%)');
@@ -162,7 +187,7 @@ class Today extends Component {
 
           e.preventDefault()
 
-          var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=${this.state.searchedLocation}&days=10`;
+          var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=${this.state.searchedLocation}&days=7`;
 
           fetch( url )
                .then(response => response.json())
@@ -179,7 +204,16 @@ class Today extends Component {
                     humidity: response.current.humidity,
                     cloudCover: response.current.cloud,
                     feelsLike: response.current.feelslike_f,
-                    forecast: response.forecast.forecastday
+                    FirstDayHigh: response.forecast.forecastday[1].day.maxtemp_f,
+                    FirstDayLow: response.forecast.forecastday[1].day.mintemp_f,
+                    SecondDayHigh: response.forecast.forecastday[2].day.maxtemp_f,
+                    SecondDayLow: response.forecast.forecastday[2].day.mintemp_f,
+                    ThirdDayHigh: response.forecast.forecastday[3].day.maxtemp_f,
+                    ThirdDayLow: response.forecast.forecastday[3].day.mintemp_f,
+                    FirstDay: response.forecast.forecastday[3].date,
+                    FirstDescription: response.forecast.forecastday[1].day.condition.text,
+                    SecondDescription: response.forecast.forecastday[2].day.condition.text,
+                    ThirdDescription: response.forecast.forecastday[3].day.condition.text,
                }, () => {
                     this.checkWeatherText()
                }))
@@ -187,8 +221,34 @@ class Today extends Component {
      }
 
 
-     render() {
 
+     // GETS THE DAY OF THE WEEK FROM THE DATE
+
+     getDay = (daysFromNow) => {
+          var d  = new Date();
+          var weekday = new Array(7);
+               weekday[0] =  "Sunday";
+               weekday[1] = "Monday";
+               weekday[2] = "Tuesday";
+               weekday[3] = "Wednesday";
+               weekday[4] = "Thursday";
+               weekday[5] = "Friday";
+               weekday[6] = "Saturday";
+               weekday[7] = "Sunday";
+               weekday[8] = "Monday";
+               weekday[9] = "Tuesday";
+               weekday[10] = "Wednesday";
+               weekday[11] = "Thursday";
+               weekday[12] = "Friday";
+               weekday[13] = "Saturday";
+
+          var n = weekday[d.getDay() + daysFromNow];
+          console.log( d.getDay() + daysFromNow);
+          return n;
+     }
+
+
+     render () {
           return (
                <div className="App">
                     <div className="search-stuff">
@@ -209,15 +269,24 @@ class Today extends Component {
                          <h3>{ Math.round(this.state.temp) }&#176;</h3>
                          <h6>H: { Math.round(this.state.hightemp) }&#176;  / L: { Math.round(this.state.lowtemp) }&#176;</h6>
                          <div id="three-day-container">
-                              <div id="three-day">
-                                   <span></span>
+                              <div id="day-container">
+                                   <h1 id="day-of-week">{ this.getDay(0) }</h1>
+                                   <h2 id="hl-temp">H: {this.state.FirstDayHigh}</h2>
+                                   <h2 id="hl-temp">L: {this.state.FirstDayLow}</h2>
+                                   <h2 id="hl-desc">{this.state.FirstDescription}</h2>
                               </div>
-
-
-                              {
-                                   console.log(this.state.forecast)
-
-                              }
+                              <div id="day-container">
+                                   <h1 id="day-of-week">{ this.getDay(1) }</h1>
+                                   <h2 id="hl-temp">H: {this.state.SecondDayHigh}</h2>
+                                   <h2 id="hl-temp">L: {this.state.SecondDayLow}</h2>
+                                   <h2 id="hl-desc">{this.state.SecondDescription}</h2>
+                              </div>
+                              <div id="day-container">
+                                   <h1 id="day-of-week">{ this.getDay(2) }</h1>
+                                   <h2 id="hl-temp">H: {this.state.ThirdDayHigh}</h2>
+                                   <h2 id="hl-temp">L: {this.state.ThirdDayLow}</h2>
+                                   <h2 id="hl-desc">{this.state.ThirdDescription}</h2>
+                              </div>
                          </div>
                     </div>
                     <div id="sun"></div>
@@ -292,8 +361,12 @@ class Today extends Component {
                     <SideNav />
                </div>
           );
-
      }
+
+
+
+
 }
 
-export default Today;
+
+export default ThreeDay;

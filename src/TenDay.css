@@ -1,0 +1,49 @@
+
+
+#three-day-container {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     background-color: rgba(255, 255, 255, .7);
+     padding: 10px;
+     box-shadow: 0px 0px 50px rgba(0, 0, 0, .1);
+     width: 790px;
+     height: 150px;
+     position: absolute;
+     bottom: 55px;
+     left: 55px;
+     /* margin: 0 auto; */
+}
+
+div#day-container {
+     width: 105px;
+     height: 140px;
+     border-right: 1px solid black;
+}
+
+h1#day-of-week {
+     margin: 0;
+     font-family: 'Work Sans';
+     font-weight: 800;
+     font-size: 17px;
+     text-transform: capitalize;
+     margin-right: 8px;
+}
+
+h2#hl-temp {
+     margin: 0;
+     font-family: 'Work Sans';
+     font-weight: 300;
+     font-size: 13px;
+}
+
+h2#hl-desc {
+     margin: 0;
+     font-family: 'Work Sans';
+     font-weight: 500;
+     font-size: 15px;
+     text-transform: capitalize;
+     position: relative;
+     top: 20px;
+     padding-right: 1px;
+}

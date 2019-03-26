@@ -20,6 +20,10 @@ class Today extends Component {
           feelsLike: null
      }
 
+
+
+     // GETS INFO FOR PARIS WHEN PAGE LOADS
+
      componentDidMount(){
 
           var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=Paris&days=1`;
@@ -46,6 +50,11 @@ class Today extends Component {
      componentDidUpdate () {
           this.checkWeatherText();
 }
+
+
+
+
+     // SEES WHAT THE CURRENT WEATHER IS AND UPDATES ANIMATIONS AND STYLES
 
      checkWeatherText() {
 
@@ -133,6 +142,9 @@ class Today extends Component {
           }
      }
 
+
+     // SHORTENS UNITED STATES OF AMERICA TO USA
+
      checkCountry = ( country ) => {
           if (country === "United States of America") {
                return "USA";
@@ -141,6 +153,9 @@ class Today extends Component {
           }
      }
 
+
+
+     // LISTENS FOR ENTER KEY WHEN TYPING A CITY
 
      didTheyClickEnter = e => {
           if ( e.keyCode === 13 ) {
@@ -155,6 +170,9 @@ class Today extends Component {
                searchedLocation: e.target.value
           })
      }
+
+
+     // GETS WEATHER AFTER SEARCH
 
      getWeather = (e) => {
 
@@ -210,6 +228,11 @@ class Today extends Component {
                               Humidity of { this.state.humidity }% with cloud cover of { this.state.cloudCover }%.
                               Currently feels like { Math.round( this.state.feelsLike ) }&#176;.</p>
                     </div>
+
+
+
+                    {/* SHAPES! */}
+
                     <div id="sun"></div>
                     <div id="cloud1">
                          <div id="cloud111"></div>
@@ -219,6 +242,13 @@ class Today extends Component {
                          <div id="cloud333"></div>
                          <div id="cloud444"></div>
                     </div>
+
+
+
+
+
+                    {/* ANIMATIONS! */}
+
                     <div id="rain">
                          <span class ="raindrop" id="raindrop1"></span>
                          <span class ="raindrop" id="raindrop2"></span>
