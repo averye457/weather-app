@@ -418,3 +418,410 @@ span {
           transform: translateY(550px);
      }
 }
+
+
+
+
+
+@media only screen and (max-width: 1010px) {
+
+     .App {
+          width: 90vw;
+     }
+
+     .nav {
+          width: 100px;
+          right: 0px;
+          left: auto;
+     }
+
+     #sun {
+          right: -75px;
+          left: auto;
+          z-index: -1;
+     }
+
+     #cloud111 {
+          right: -100px;
+          left: auto;
+          z-index: -1;
+     }
+
+     #cloud222 {
+          right: 50px;
+          left: auto;
+          z-index: -1;
+     }
+
+     #cloud333 {
+          right: 100px;
+          left: auto;
+          z-index: -2;
+     }
+
+     #cloud444 {
+          right:185px;
+          left: auto;
+          z-index: -2;
+     }
+
+     span {
+          left: auto;
+          right: 325px;
+          z-index: -3;
+     }
+
+     #raindrop5, #raindrop6, #raindrop7, #raindrop8 {
+          left: auto;
+          right: 300px;
+          top: 110px;
+     }
+
+     #raindrop9, #raindrop10, #raindrop11, #raindrop12 {
+          left: auto;
+          right: 245px;
+          top: 150px;
+     }
+
+     #raindrop13, #raindrop14, #raindrop15, #raindrop16 {
+          left: auto;
+          right: 200px;
+          top: 100px;
+     }
+
+     #raindrop17, #raindrop18, #raindrop19, #raindrop20 {
+          left: auto;
+          right: 175px;
+          top: 170px;
+     }
+
+     #raindrop21, #raindrop22, #raindrop23, #raindrop24 {
+          left: auto;
+          right: 125px;
+          top: 110px;
+     }
+
+     #raindrop25, #raindrop26, #raindrop27, #raindrop28 {
+          left: auto;
+          right: 0px;
+          top: 140px;
+     }
+
+     #snowfall5, #snowfall6, #snowfall7, #snowfall8 {
+          left: auto;
+          right: 300px;
+          top: 110px;
+     }
+
+     #snowfall9, #snowfall10, #snowfall11, #snowfall12 {
+          left: auto;
+          right: 245px;
+          top: 150px;
+     }
+
+     #snowfall13, #snowfall14, #snowfall15, #snowfall16 {
+          left: auto;
+          right: 200px;
+          top: 100px;
+     }
+
+     #snowfall17, #snowfall18, #snowfall19, #snowfall20 {
+          left: auto;
+          right: 175px;
+          top: 170px;
+     }
+
+     #snowfall21, #snowfall22, #snowfall23, #snowfall24 {
+          left: auto;
+          right: 125px;
+          top: 110px;
+     }
+
+     #snowfall25, #snowfall26, #snowfall27, #snowfall28 {
+          left: auto;
+          right: 75px;
+          top: 140px;
+     }
+
+}
+
+
+
+
+
+@media only screen and (max-width: 750px) {
+
+     .nav {
+          width: 75px;
+          right: 0px;
+          left: auto;
+     }
+
+     .link {
+          font-size: 20px;
+     }
+
+     .weather-info {
+          max-width: 75%
+     }
+
+     .search-stuff {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 75%;
+     }
+
+     h5 {
+          margin: 0;
+          margin-top: -25px;
+          font-family: 'Work Sans';
+          font-weight: 700;
+          font-size: 24px;
+          background-color: black;
+          color: white;
+          width: auto;
+          display: inline-block;
+          padding: 5px 10px;
+     }
+
+     h6 {
+          margin: 0;
+          margin-top: -25px;
+          font-family: 'Work Sans';
+          font-weight: 300;
+          font-size: 20px;
+          padding-left: 2px;
+     }
+
+     h3 {
+          margin: 0;
+          margin-top: 0px;
+          font-family: 'Work Sans';
+          font-weight: 800;
+          font-size: 125px;
+     }
+
+     h4 {
+          margin: 0;
+          margin-top: 125px;
+          font-family: 'Work Sans';
+          font-weight: 800;
+          font-size: 30px;
+          text-transform: capitalize;
+     }
+
+     p {
+          width: 90%;
+     }
+
+     h6, h5, h3, h4, p {
+          margin-left: 55px;
+     }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+     #search {
+          width: 150%;
+          margin-right: 0;
+     }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+     .App {
+          height: 95vh;
+     }
+
+     .nav {
+          flex-direction: row;
+          width: 100%;
+          height: 50px;
+          left: 0;
+          right: 0;
+          top: auto;
+          bottom: 0;
+     }
+
+     .link {
+          padding-top: 14px;
+          padding-bottom: 14px;
+          background-color: black;
+     }
+
+     a {
+          margin: 0;
+     }
+
+     a:hover {
+          background-color: darkgrey;
+          color: black;
+          font-weight: 600;
+     }
+
+     a:active {
+          background-color: black;
+     }
+
+     #first-link {
+          border-bottom: none;
+          border-right: 1px white solid;
+     }
+
+     #last-link {
+          border-top: none;
+          border-left: 1px white solid;
+     }
+
+     #search {
+          height: 40px;
+          font-size: 22px;
+          margin-left: 45px;
+     }
+
+     .weather-info {
+          max-width: 88%
+     }
+
+     .search-stuff {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 88%;
+     }
+
+     h5 {
+          font-size: 20px;
+     }
+
+     h6 {
+          font-size: 18px;
+          margin-top: -15px;
+     }
+
+     h3 {
+          font-size: 100px;
+     }
+
+     p {
+          width: 85%;
+     }
+
+     h5, h6, h3, h4, p {
+          margin-left: 45px;
+     }
+
+     #sun {
+          right: -125px;
+          left: auto;
+          z-index: -1;
+     }
+
+     #cloud111 {
+          right: -150px;
+          left: auto;
+          z-index: -1;
+     }
+
+     #cloud222 {
+          right: 0px;
+          left: auto;
+          z-index: -1;
+     }
+
+     #cloud333 {
+          right: 50px;
+          left: auto;
+          z-index: -2;
+     }
+
+     #cloud444 {
+          right:135px;
+          left: auto;
+          z-index: -2;
+     }
+
+     span {
+          left: auto;
+          right: 275px;
+          z-index: -3;
+     }
+
+     #raindrop5, #raindrop6, #raindrop7, #raindrop8 {
+          left: auto;
+          right: 250px;
+          top: 110px;
+     }
+
+     #raindrop9, #raindrop10, #raindrop11, #raindrop12 {
+          left: auto;
+          right: 195px;
+          top: 150px;
+     }
+
+     #raindrop13, #raindrop14, #raindrop15, #raindrop16 {
+          left: auto;
+          right: 150px;
+          top: 100px;
+     }
+
+     #raindrop17, #raindrop18, #raindrop19, #raindrop20 {
+          left: auto;
+          right: 125px;
+          top: 170px;
+     }
+
+     #raindrop21, #raindrop22, #raindrop23, #raindrop24 {
+          left: auto;
+          right: 75px;
+          top: 110px;
+     }
+
+     #raindrop25, #raindrop26, #raindrop27, #raindrop28 {
+          left: auto;
+          right: 25px;
+          top: 140px;
+     }
+
+     #snowfall5, #snowfall6, #snowfall7, #snowfall8 {
+          left: auto;
+          right: 250px;
+          top: 110px;
+     }
+
+     #snowfall9, #snowfall10, #snowfall11, #snowfall12 {
+          left: auto;
+          right: 195px;
+          top: 150px;
+     }
+
+     #snowfall13, #snowfall14, #snowfall15, #snowfall16 {
+          left: auto;
+          right: 150px;
+          top: 100px;
+     }
+
+     #snowfall17, #snowfall18, #snowfall19, #snowfall20 {
+          left: auto;
+          right: 125px;
+          top: 170px;
+     }
+
+     #snowfall21, #snowfall22, #snowfall23, #snowfall24 {
+          left: auto;
+          right: 75px;
+          top: 110px;
+     }
+
+     #snowfall25, #snowfall26, #snowfall27, #snowfall28 {
+          left: auto;
+          right: 25px;
+          top: 140px;
+     }
+
+
+}
