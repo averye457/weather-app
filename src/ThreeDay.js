@@ -37,7 +37,7 @@ class ThreeDay extends Component {
 
      componentDidMount(){
 
-          var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=Paris&days=7`;
+          var url = `https://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=Paris&days=7`;
 
           fetch( url )
                .then(response => response.json())
@@ -195,7 +195,7 @@ class ThreeDay extends Component {
 
           e.preventDefault()
 
-          var url = `http://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=${this.state.searchedLocation}&days=7`;
+          var url = `https://api.apixu.com/v1/forecast.json?key=7c69d285fd3240afadb02824192202&q=${this.state.searchedLocation}&days=7`;
 
           fetch( url )
                .then(response => response.json())
