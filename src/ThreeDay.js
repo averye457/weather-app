@@ -91,7 +91,7 @@ class ThreeDay extends Component {
                rain.setAttribute('style', 'display: none');
                var snow = document.getElementById('snow');
                snow.setAttribute('style', 'display: none');
-          } else if ( this.state.description === "Partly cloudy" ) {
+          } else if ( this.state.description === "Partly cloudy" || this.state.description === "Fog" || this.state.description === "Freezing fog") {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, rgb(249, 245, 148) 50%, #fff 50%)');
                var sun = document.getElementById('sun');
@@ -120,9 +120,15 @@ class ThreeDay extends Component {
           } else if ( this.state.description === "Patchy rain possible" || this.state.description === "Patchy light drizzle"
           || this.state.description === "Light drizzle" || this.state.description === "Patchy light rain"
           || this.state.description === "Light rain" || this.state.description === "Patchy light drizzle"
+          || this.state.description === "Light rain shower" || this.state.description === "Moderate or heavy rain shower"
           || this.state.description === "Moderate rain at times" || this.state.description === "Moderate rain"
           || this.state.description === "Heavy rain at times" || this.state.description === "Heavy rain"
           || this.state.description === "Torrential rain shower" || this.state.description === "Patchy light rain with thunder"
+          || this.state.description === "Mist" || this.state.description === "Patchy sleet possible"
+          || this.state.description === "Freezing Drizzle" || this.state.description === "Heavy freezing drizzle"
+          || this.state.description === "Light freezing rain" || this.state.description === "Moderate or heavy freezing rain"
+          || this.state.description === "Light sleet" || this.state.description === "Moderate or heavy sleet"
+          || this.state.description === "Light sleet showers" || this.state.description === "Moderate or heavy sleet showers"
           || this.state.description === "Moderate or heavy rain with thunder" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, lightblue 50%, #fff 50%)');
@@ -143,6 +149,8 @@ class ThreeDay extends Component {
           || this.state.description === "Moderate snow" || this.state.description === "Patchy heavy snow"
           || this.state.description === "Heavy snow" || this.state.description === "Light snow showers"
           || this.state.description === "Moderate or heavy snow showers" || this.state.description === "Patchy light snow with thunder"
+          || this.state.description === "Patchy freezing drizzle" || this.state.description === "Ice pellets"
+          || this.state.description === "Light showers of ice pellets" || this.state.description === "Moderate or heavy showers of ice pellets"
           || this.state.description === "Moderate or heavy snow with thunder" ) {
                var root = document.getElementById('root');
                root.setAttribute('style', 'background: linear-gradient(0deg, 	#E8E8E8 50%, #fff 50%)');
