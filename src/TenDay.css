@@ -1,6 +1,6 @@
 
 
-#three-day-container {
+#ten-day-container {
      display: flex;
      flex-direction: row;
      justify-content: space-around;
@@ -46,4 +46,120 @@ h2#hl-desc {
      position: relative;
      top: 20px;
      padding-right: 1px;
+}
+
+
+
+
+
+@media only screen and (max-width: 1010px) {
+
+     #ten-day-container {
+          width: 75%;
+     }
+
+     div#day-container {
+          width: 14.3%;
+          height: 140px;
+          margin-left: 5px;
+     }
+
+     h1#day-of-week {
+          margin: 0;
+          font-family: 'Work Sans';
+          font-weight: 800;
+          font-size: 17px;
+          text-transform: capitalize;
+          margin-right: 8px;
+     }
+
+}
+
+@media only screen and (max-width: 750px) {
+
+     #ten-day-container {
+          flex-flow: row wrap;
+          justify-content: left;
+          width: 70%;
+          height: 250px;
+     }
+
+     div#day-container {
+          width: 20%;
+          padding-left: 5px;
+          margin: 5px;
+          max-height: 115px;
+          border-right: 1px solid black;
+     }
+
+     h1#day-of-week {
+          margin: 0;
+          font-family: 'Work Sans';
+          font-weight: 800;
+          font-size: 17px;
+          text-transform: capitalize;
+          margin-right: 8px;
+     }
+
+     h2#hl-desc {
+          margin: 0;
+          font-family: 'Work Sans';
+          font-weight: 500;
+          font-size: 15px;
+          text-transform: capitalize;
+          position: relative;
+          top: 20px;
+          padding-right: 1px;
+     }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+     #ten-day-container {
+          flex-flow: column;
+          overflow-y: scroll;
+          width: 65%;
+     }
+
+     div#day-container {
+          width: 95%;
+          padding-left: 5px;
+          margin: 5px;
+          min-height: 70px;
+          border-right: none;
+          border-bottom: 1px solid black;
+     }
+
+     h2#hl-desc {
+          float: right;
+          text-align: right;
+          padding-left: 30px;
+          margin: 0;
+          position: relative;
+          top: -50px;
+     }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+     #ten-day-container {
+          width: 66%;
+          min-height: 0;
+          height: auto;
+          bottom: auto;
+          top: 320px;
+          bottom: 75px;
+     }
+
+}
+
+@media only screen and (max-width: 325px) {
+
+     #ten-day-container {
+          width: 65%;
+          margin-left: -10px;
+     }
+
 }

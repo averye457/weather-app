@@ -54,16 +54,16 @@ class ThreeDay extends Component {
                     humidity: response.current.humidity,
                     cloudCover: response.current.cloud,
                     feelsLike: response.current.feelslike_f,
-                    FirstDayHigh: response.forecast.forecastday[1].day.maxtemp_f,
-                    FirstDayLow: response.forecast.forecastday[1].day.mintemp_f,
-                    SecondDayHigh: response.forecast.forecastday[2].day.maxtemp_f,
-                    SecondDayLow: response.forecast.forecastday[2].day.mintemp_f,
-                    ThirdDayHigh: response.forecast.forecastday[3].day.maxtemp_f,
-                    ThirdDayLow: response.forecast.forecastday[3].day.mintemp_f,
-                    FirstDay: response.forecast.forecastday[3].date,
-                    FirstDescription: response.forecast.forecastday[1].day.condition.text,
-                    SecondDescription: response.forecast.forecastday[2].day.condition.text,
-                    ThirdDescription: response.forecast.forecastday[3].day.condition.text
+                    FirstDayHigh: response.forecast.forecastday[0].day.maxtemp_f,
+                    FirstDayLow: response.forecast.forecastday[0].day.mintemp_f,
+                    SecondDayHigh: response.forecast.forecastday[1].day.maxtemp_f,
+                    SecondDayLow: response.forecast.forecastday[1].day.mintemp_f,
+                    ThirdDayHigh: response.forecast.forecastday[2].day.maxtemp_f,
+                    ThirdDayLow: response.forecast.forecastday[2].day.mintemp_f,
+                    FirstDay: response.forecast.forecastday[1].date,
+                    FirstDescription: response.forecast.forecastday[0].day.condition.text,
+                    SecondDescription: response.forecast.forecastday[1].day.condition.text,
+                    ThirdDescription: response.forecast.forecastday[2].day.condition.text
                }))
 
      }
@@ -204,16 +204,16 @@ class ThreeDay extends Component {
                     humidity: response.current.humidity,
                     cloudCover: response.current.cloud,
                     feelsLike: response.current.feelslike_f,
-                    FirstDayHigh: response.forecast.forecastday[1].day.maxtemp_f,
-                    FirstDayLow: response.forecast.forecastday[1].day.mintemp_f,
-                    SecondDayHigh: response.forecast.forecastday[2].day.maxtemp_f,
-                    SecondDayLow: response.forecast.forecastday[2].day.mintemp_f,
-                    ThirdDayHigh: response.forecast.forecastday[3].day.maxtemp_f,
-                    ThirdDayLow: response.forecast.forecastday[3].day.mintemp_f,
-                    FirstDay: response.forecast.forecastday[3].date,
-                    FirstDescription: response.forecast.forecastday[1].day.condition.text,
-                    SecondDescription: response.forecast.forecastday[2].day.condition.text,
-                    ThirdDescription: response.forecast.forecastday[3].day.condition.text,
+                    FirstDayHigh: response.forecast.forecastday[0].day.maxtemp_f,
+                    FirstDayLow: response.forecast.forecastday[0].day.mintemp_f,
+                    SecondDayHigh: response.forecast.forecastday[1].day.maxtemp_f,
+                    SecondDayLow: response.forecast.forecastday[1].day.mintemp_f,
+                    ThirdDayHigh: response.forecast.forecastday[2].day.maxtemp_f,
+                    ThirdDayLow: response.forecast.forecastday[2].day.mintemp_f,
+                    FirstDay: response.forecast.forecastday[0].date,
+                    FirstDescription: response.forecast.forecastday[0].day.condition.text,
+                    SecondDescription: response.forecast.forecastday[1].day.condition.text,
+                    ThirdDescription: response.forecast.forecastday[2].day.condition.text,
                }, () => {
                     this.checkWeatherText()
                }))
@@ -227,20 +227,20 @@ class ThreeDay extends Component {
      getDay = (daysFromNow) => {
           var d  = new Date();
           var weekday = new Array(7);
-               weekday[0] =  "Sunday";
-               weekday[1] = "Monday";
-               weekday[2] = "Tuesday";
-               weekday[3] = "Wednesday";
-               weekday[4] = "Thursday";
-               weekday[5] = "Friday";
-               weekday[6] = "Saturday";
-               weekday[7] = "Sunday";
-               weekday[8] = "Monday";
-               weekday[9] = "Tuesday";
-               weekday[10] = "Wednesday";
-               weekday[11] = "Thursday";
-               weekday[12] = "Friday";
-               weekday[13] = "Saturday";
+               weekday[0] =  "Sun";
+               weekday[1] = "Mon";
+               weekday[2] = "Tue";
+               weekday[3] = "Wed";
+               weekday[4] = "Thu";
+               weekday[5] = "Fri";
+               weekday[6] = "Sat";
+               weekday[7] = "Sun";
+               weekday[8] = "Mon";
+               weekday[9] = "Tue";
+               weekday[10] = "Wed";
+               weekday[11] = "Thu";
+               weekday[12] = "Fri";
+               weekday[13] = "Sat";
 
           var n = weekday[d.getDay() + daysFromNow];
           console.log( d.getDay() + daysFromNow);
@@ -281,7 +281,7 @@ class ThreeDay extends Component {
                                    <h2 id="hl-temp">L: {this.state.SecondDayLow}</h2>
                                    <h2 id="hl-desc">{this.state.SecondDescription}</h2>
                               </div>
-                              <div id="day-container">
+                              <div id="day-container" style={{border: 'none'}}>
                                    <h1 id="day-of-week">{ this.getDay(2) }</h1>
                                    <h2 id="hl-temp">H: {this.state.ThirdDayHigh}</h2>
                                    <h2 id="hl-temp">L: {this.state.ThirdDayLow}</h2>
