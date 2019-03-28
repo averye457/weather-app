@@ -1,3 +1,5 @@
+# Code Louisville React Project
+
 A web app designed to display weather in a an appealing and interactive way. This project was built as a part of my project for Code Louisville ([codelouisville.org](https://codelouisville.org/)) for completion of the 'Javascript with React.js' course.  
 
 
