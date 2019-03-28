@@ -1,6 +1,6 @@
 
 
-#three-day-container {
+#three-day-containera {
      display: flex;
      flex-direction: row;
      justify-content: space-around;
@@ -15,13 +15,13 @@
      /* margin: 0 auto; */
 }
 
-div#day-container {
+div#day-containera {
      width: 250px;
      height: 140px;
      border-right: none;
 }
 
-h1#day-of-week {
+h1#day-of-weeka {
      margin: 0;
      font-family: 'Work Sans';
      font-weight: 700;
@@ -30,14 +30,14 @@ h1#day-of-week {
      margin-right: 13px;
 }
 
-h2#hl-temp {
+h2#hl-tempa {
      margin: 0;
      font-family: 'Work Sans';
      font-weight: 300;
      font-size: 18px;
 }
 
-h2#hl-desc {
+h2#hl-desca {
      margin: 0;
      font-family: 'Work Sans';
      font-weight: 400;
@@ -50,96 +50,53 @@ h2#hl-desc {
 
 @media only screen and (max-width: 1010px) {
 
-     #three-day-container {
+     #three-day-containera {
           width: 75%;
-     }
-
-     div#day-container {
-          width: 14.3%;
-          height: 140px;
-          margin-left: 5px;
-     }
-
-     h1#day-of-week {
-          margin: 0;
-          font-family: 'Work Sans';
-          font-weight: 800;
-          font-size: 17px;
-          text-transform: capitalize;
-          margin-right: 8px;
      }
 
 }
 
 @media only screen and (max-width: 750px) {
 
-     #three-day-container {
-          flex-flow: row wrap;
+     #three-day-containera {
+          flex-flow: row;
           justify-content: left;
           width: 70%;
-     }
-
-     div#day-container {
-          width: 20%;
-          padding-left: 5px;
-          margin: 5px;
-          max-height: 115px;
-          border-right: 1px solid black;
-     }
-
-     h1#day-of-week {
-          margin: 0;
-          font-family: 'Work Sans';
-          font-weight: 800;
-          font-size: 17px;
-          text-transform: capitalize;
-          margin-right: 8px;
-     }
-
-     h2#hl-desc {
-          margin: 0;
-          font-family: 'Work Sans';
-          font-weight: 500;
-          font-size: 15px;
-          text-transform: capitalize;
-          position: relative;
-          top: 20px;
-          padding-right: 1px;
      }
 
 }
 
 @media only screen and (max-width: 600px) {
 
-     #three-day-container {
+     #three-day-containera {
           flex-flow: column;
           overflow-y: scroll;
           width: 65%;
      }
 
-     div#day-container {
+     div#day-containera {
           width: 95%;
           padding-left: 5px;
           margin: 5px;
-          min-height: 70px;
+          min-height: 100px;
           border-right: none;
           border-bottom: 1px solid black;
      }
 
-     h2#hl-desc {
+     h2#hl-desca {
           float: right;
           text-align: right;
           padding-left: 30px;
           margin: 0;
           position: relative;
-          top: -50px;
+          top: -75px;
      }
 
 }
 
 @media only screen and (max-width: 500px) {
 
-     #three-day-container {
+     #three-day-containera {
           width: 66%;
           min-height: 0;
           height: auto;
@@ -152,7 +109,7 @@ h2#hl-desc {
 
 @media only screen and (max-width: 325px) {
 
-     #three-day-container {
+     #three-day-containera {
           width: 65%;
           margin-left: -10px;
      }

@@ -276,24 +276,24 @@ class ThreeDay extends Component {
                          <h5>{ this.state.name }, {this.state.region}, { this.checkCountry(this.state.country) }</h5>
                          <h3>{ Math.round(this.state.temp) }&#176;</h3>
                          <h6>H: { Math.round(this.state.hightemp) }&#176;  / L: { Math.round(this.state.lowtemp) }&#176;</h6>
-                         <div id="three-day-container">
-                              <div id="day-container">
-                                   <h1 id="day-of-week">{ this.getDay(0) }</h1>
-                                   <h2 id="hl-temp">H: {this.state.FirstDayHigh}</h2>
-                                   <h2 id="hl-temp">L: {this.state.FirstDayLow}</h2>
-                                   <h2 id="hl-desc">{this.state.FirstDescription}</h2>
+                         <div id="three-day-containera">
+                              <div id="day-containera">
+                                   <h1 id="day-of-weeka">{ this.getDay(0) }</h1>
+                                   <h2 id="hl-tempa">H: {this.state.FirstDayHigh}</h2>
+                                   <h2 id="hl-tempa">L: {this.state.FirstDayLow}</h2>
+                                   <h2 id="hl-desca">{this.state.FirstDescription}</h2>
                               </div>
-                              <div id="day-container">
-                                   <h1 id="day-of-week">{ this.getDay(1) }</h1>
-                                   <h2 id="hl-temp">H: {this.state.SecondDayHigh}</h2>
-                                   <h2 id="hl-temp">L: {this.state.SecondDayLow}</h2>
-                                   <h2 id="hl-desc">{this.state.SecondDescription}</h2>
+                              <div id="day-containera">
+                                   <h1 id="day-of-weeka">{ this.getDay(1) }</h1>
+                                   <h2 id="hl-tempa">H: {this.state.SecondDayHigh}</h2>
+                                   <h2 id="hl-tempa">L: {this.state.SecondDayLow}</h2>
+                                   <h2 id="hl-desca">{this.state.SecondDescription}</h2>
                               </div>
-                              <div id="day-container" style={{border: 'none'}}>
-                                   <h1 id="day-of-week">{ this.getDay(2) }</h1>
-                                   <h2 id="hl-temp">H: {this.state.ThirdDayHigh}</h2>
-                                   <h2 id="hl-temp">L: {this.state.ThirdDayLow}</h2>
-                                   <h2 id="hl-desc">{this.state.ThirdDescription}</h2>
+                              <div id="day-containera" style={{border: 'none'}}>
+                                   <h1 id="day-of-weeka">{ this.getDay(2) }</h1>
+                                   <h2 id="hl-tempa">H: {this.state.ThirdDayHigh}</h2>
+                                   <h2 id="hl-tempa">L: {this.state.ThirdDayLow}</h2>
+                                   <h2 id="hl-desca">{this.state.ThirdDescription}</h2>
                               </div>
                          </div>
                     </div>
